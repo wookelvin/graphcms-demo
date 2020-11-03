@@ -1,7 +1,7 @@
 <template>
 <div>
   <h1>Page</h1>
-  <div v-if="page" class="bg-light p-4 shadow">
+  <div v-if="page" class="bg-light p-4 border">
     <h2>{{page.title}}</h2>
     <hr>
     <div v-html="page.content.html"></div>

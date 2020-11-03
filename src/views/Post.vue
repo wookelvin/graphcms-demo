@@ -1,7 +1,7 @@
 <template>
 <div>
   <h1>Post</h1>
-  <div v-if="post" class="bg-light p-4 shadow">
+  <div v-if="post" class="bg-light p-4 shadow border">
     
     
     <h2>{{post.title}}</h2>
@@ -10,7 +10,7 @@
       <img :src="post.author.picture.url" :alt="post.author.name" width="50" height="50" class="rounded-circle mr-2"/>
       <div>
         <div><strong>{{post.author.name}}</strong></div>
-        <div class="">{{post.date | formatDate}}</div>
+        <div class="text-muted"><b-icon-calendar-date variant="secondary" class="mr-1"/>{{post.date | formatDate}}</div>
       </div>
     </div>
     <hr>

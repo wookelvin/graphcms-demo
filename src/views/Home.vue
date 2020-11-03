@@ -3,7 +3,7 @@
   <h1>Home</h1>
   <div class="row">
     <div class="col-4" v-for="p of posts" :key="p.id">
-      <div class="bg-light mb-3 p-3 post-item shadow">
+      <div class="bg-light mb-3 p-3 post-item border">
         <div class="d-flex justify-content-between">
           <div>
             
@@ -15,8 +15,8 @@
             <div class="d-flex align-items-center small mt-2 text-muted">
               <img :src="p.author.picture.url" :alt="p.author.name" width="20" height="20" class="rounded-circle mr-2"/>
               <div>{{p.author.name}}</div>
-              <div class="mx-2 "> | </div>
-              <div class="">{{p.date | formatDate}}</div>
+              <div class="mx-2"> - </div>
+              <div class=""><b-icon-calendar-date variant="secondary" class="mr-1"/>{{p.date | formatDate}}</div>
             </div>
           </div>
          

@@ -1,10 +1,15 @@
 <template>
 <div>
   <h1>Authors</h1>
-  <div v-for="a of authors" :key="'author'+a.id" class="mb-3 d-flex p-3 shadow bg-light">
-    <img :src="a.picture.url" rounded="circle" width="50" height="50" :alt="a.name" class="rounded-circle mr-3">
-    <div>
-      <h2 class="my-0 mt-2">{{a.name}}</h2>
+  <div v-for="a of authors" :key="'author'+a.id" class="mb-5 row border-top pt-5">
+    <div class="d-flex mb-3 col-3">
+      <img :src="a.picture.url" rounded="circle" width="50" height="50" :alt="a.name" class="rounded-circle mr-3">
+      <div><h2 class="my-0 mt-2">{{a.name}}</h2></div>
+    </div>
+    <div class="bg-light border col">
+      <div v-if="!a.posts.length" class="mx-2 my-4">
+        <i>No posts found</i>
+      </div>
       <router-link v-for="p of a.posts" :key="`a${a.id}p${p.id}`" class="post-link border" :to="`/posts/${p.slug}`">
         <h3>{{p.title}}</h3>
         <div class='text-muted'>{{p.date | formatDate}}</div>
